@@ -1,17 +1,11 @@
-import {useState} from 'react'
-import Users from './User/Users'
 
+import Users from './Users/Users'
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
-  const [showUsers,setUserView] = useState(true);
   return (
     <div className="App">
-      <div>
-      <button onClick={e => setUserView(!showUsers)}>{showUsers ? 'Hide component' : 'Show Component'}</button>
-      </div>
-
-      { showUsers ? <Users/> : null}
-
+      <Users/>
     </div>
 
   );
