@@ -1,12 +1,31 @@
 
 import Users from './Users/Users'
+import Routing from './Rounting/Routing'
+import { useState } from "react"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import { BrowserRouter,Routes,Route} from "react-router-dom"
+import Navbars from './Navbars'
 
 function App() {
+  const [showUsers, setUserView] = useState(true);
+
   return (
-    <div className="App">
-      <Users/>
-    </div>
+    <BrowserRouter>
+      <Navbars/>
+      <Routes>
+        <Route path='/' element = {
+              <div className="App">
+                  <div>
+                    <button onClick={e => setUserView(!showUsers)}>{showUsers ? 'Hide component' : 'Show Component'}</button>
+                  </div>
+                  {showUsers ? <Users/> : null}
+              </div>
+        }/>
+        <Route path="/Routing/:term" element={<Routing/>}/>
+        <Route/>
+      </Routes>
+    </BrowserRouter>
+   
 
   );
 }
