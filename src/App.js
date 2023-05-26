@@ -5,6 +5,8 @@ import { useState } from "react"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter,Routes,Route} from "react-router-dom"
 import Navbars from './Navbars'
+import Login from "./Login/Login"
+import Signup from './Signup/Signup'
 
 function App() {
   const [showUsers, setUserView] = useState(true);
@@ -22,7 +24,8 @@ function App() {
               </div>
         }/>
         <Route path="/Routing/:term" element={<Routing/>}/>
-        <Route/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
       </Routes>
     </BrowserRouter>
    

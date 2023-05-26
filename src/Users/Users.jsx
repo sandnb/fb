@@ -10,7 +10,7 @@ function Users() {
         const URL = "https://dummyapi.io/data/v1/user?limit=10";
     (async()=> {
         const {data} = (await axios.get(URL, {
-            headers:{"app-id":"6450dca9caedebc0caec21a1"}})).data;
+            headers:{"app-id":"646f1874dff05ef50905531c"}})).data;
             setUsers(data);
     })()
 
@@ -22,7 +22,7 @@ return (
         <Row>
             {users.filter(({firstName,lastName}) =>{
                 // return firstName.toLowerCase().includes(searchTerm) || lastName.toLowerCase().includes(searchTerm)
-                return (firstName + lastName).toLowerCase().includes(searchTerm) // above line also doing thr same but this is more compact way to write the code
+              return !searchTerm || (firstName + lastName).toLowerCase().includes(searchTerm) // above line also doing thr same but this is more compact way to write the code
             }).map(user => <User key={user.id} user= {user}/>)};
         </Row>
     </Container>

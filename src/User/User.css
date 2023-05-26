@@ -1,10 +1,26 @@
-.card-body{
-    display: flex;
-    justify-content: space-around;
+.user{
+    min-width: 300px ;
+    max-width: 320px ;
+}
+.img{
+    height: 72px;
+}
+.card{
+   box-shadow: grey 5px 5px 10px;
+}
+@media only screen and (min-width:1250px){
+     .user{
+        max-width: 400px  ;
+     }
+}
+@media only screen and (min-width:1160px) and (max-width:1249px){
+    .user{
+       max-width: 370px  ;
+    }
 }
 
-.info{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+@media only screen  and (max-width:990px){
+    .user{
+       max-width: 350px  ;
+    }
 }

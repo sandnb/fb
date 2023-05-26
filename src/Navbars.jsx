@@ -21,6 +21,13 @@ function Navbars() {
           >
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/Routing/123">Routing</Nav.Link>
+          </Nav>
+          
+            <Nav className='ms-auto'>
+              <Nav.Link as={Link} to="/login">Login</Nav.Link>
+              <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
+            </Nav>
+            
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -34,7 +41,7 @@ function Navbars() {
             <Nav.Link href="#" disabled>
               Link
             </Nav.Link> */}
-          </Nav>
+          
           <Form className="d-flex">
             <Form.Control
               type="search"
