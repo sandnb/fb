@@ -2,9 +2,12 @@ const express = require("express");
 
 const router = express.Router();
 
-const UserModal = require("../Models/userModel");
+const UserModel = require("../Models/userModel");
 
-router.post('/signup',UserModal.signup);
+router.post('/signup',UserModel.signup);
+
+router.post('/login',UserModel.login);
+
 
 router.all('/*',(req,res)=>{
     console.log(req.method,req.path);
