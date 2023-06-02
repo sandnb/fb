@@ -48,7 +48,7 @@ userSchema.statics.login = async(req,res,next) => {
       console.log(userData);
       if(userData){
         // if user exists match the password now
-        if(password == userData.password){
+        if(password === userData.password){
           res.status(200);
             res.send({success:true , message:`${username} logged in successfully`,data:userData});
         }else{
